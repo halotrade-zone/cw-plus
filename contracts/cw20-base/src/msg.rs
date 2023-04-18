@@ -39,7 +39,7 @@ impl InstantiateMsg {
         }
         if !self.has_valid_symbol() {
             return Err(StdError::generic_err(
-                "Ticker symbol is not in expected format [a-zA-Z\\-]{3,12}",
+                "Ticker symbol is not in expected format [a-zA-Z0-9\\_]{3,20}",
             ));
         }
         if self.decimals > 18 {
