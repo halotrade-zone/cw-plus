@@ -63,6 +63,7 @@ impl InstantiateMsg {
         }
         for byte in bytes.iter() {
             if (*byte != 45)
+                && (*byte < 48 || *byte > 57)
                 && (*byte < 65 || (*byte > 90 && *byte != 95))
                 && (*byte < 97 || *byte > 122)
             {
